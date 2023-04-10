@@ -23,7 +23,15 @@ struct ContentView: View {
         NavigationView {
             List(songs) { song in
                 HStack {
-                    
+                    AsyncImage(url: song.imageUrl)
+                        .frame(width: 75, height: 75, alignment: .center)
+                    VStack(alignment: .leading) {
+                        Text(song.name)
+                            .font(.title3)
+                        Text(song.artist)
+                            .font(.footnote)
+                    }
+                    .padding()
                 }
             }
         }
